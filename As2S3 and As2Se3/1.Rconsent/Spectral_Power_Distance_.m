@@ -28,10 +28,10 @@ addpath(script_dir);
 % ==================================================================================================================
 
 % Manually specified constant Aeff values for each structure (in m^2):
-% Values corresponding to H = 0.05, 0.1, 0.15 um at R = 2.25 um and wavelength = 4 um
-aeff_H05 = 1.15493669451572E-11; % Aeff for H = 0.05 um (Column 1) - please put manually
-aeff_H10 = 1.16061628805426E-11; % Aeff for H = 0.10 um (Column 2) - please put manually
-aeff_H15 = 1.16823245778908E-11; % Aeff for H = 0.15 um (Column 3) - please put manually
+% Values corresponding to H = 0.05, 0.1, 0.15 um at R = 2.50 um and wavelength = 4 um
+aeff_H05 = 1.36389525850693E-11; % Aeff for H = 0.05 um (Column 1)
+aeff_H10 = 1.3682739349945E-11; % Aeff for H = 0.10 um (Column 2)
+aeff_H15 = 1.37428672469036E-11; % Aeff for H = 0.15 um (Column 3)
 
 % Primary parameters
 lambdapump = 4100;           % pump wavelength [nm]
@@ -78,8 +78,8 @@ RT = RT/trapz(t,RT);         % normalise RT to unit integral
 Tr = 0;
 nplot = 240;                 % number of length steps to save field at
 
-% Locate and import All_n_dataf_R2.25(um).csv in the script's directory
-csv_path = fullfile(fileparts(mfilename('fullpath')), 'All_n_dataf_R2.25(um).csv');
+% Locate and import All_n_dataf_R2.5(um).csv in the script's directory
+csv_path = fullfile(fileparts(mfilename('fullpath')), 'All_n_dataf_R2.5(um).csv');
 fprintf('Loading index data from: %s\n', csv_path);
 imported_data = importdata(csv_path);
 
@@ -248,5 +248,5 @@ end
 disp('========================================================================================================');
 
 disp('==================================================');
-disp('All columns of All_n_dataf_R2.25(um).csv processed successfully.');
+disp('All columns of All_n_dataf_R2.5(um).csv processed successfully.');
 disp('==================================================');
